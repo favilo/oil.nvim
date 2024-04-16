@@ -61,11 +61,7 @@ local function parse_ls_line(line)
   return name, type, meta
 end
 
----@param str string String to escape
----@return string Escaped string
-local function shellescape(str)
-  return "'" .. str:gsub("'", "'\\''") .. "'"
-end
+local shellescape = vim.fn.shellescape
 
 ---@param url oil.sshUrl
 ---@return oil.sshFs
